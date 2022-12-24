@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
+import {createRoot} from 'react-dom/client';
+// import './index.css';
+
 import App from './App';
+import { Amplify } from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
 
+const root = createRoot(document.getElementById('root'))
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React>
-    <App />
-  </React>
-);
+root.render(<App/>)
 
 

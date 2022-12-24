@@ -1,12 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+import "@aws-amplify/ui-react/styles.css";
+import {
+  withAuthenticator,
+  Button,
+  Heading,
+  
+  View,
+  Card,
+} from "@aws-amplify/ui-react";
+
+function App({ signOut }) {
   return (
-    <div >
-      <h1>Hello AWS</h1>
-    </div>
+    <View className="App">
+      <Card>
+
+        <Heading level={1}>We now have Auth!</Heading>
+      </Card>
+      <Button onClick={signOut}>Sign Out</Button>
+    </View>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
